@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from core.views import HomeView
 
 urlpatterns = [
+    url(r'^$', HomeView.as_view(), name='home'),
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
 ]
